@@ -134,16 +134,19 @@
             <nav id="site-map">
                 <div class="container-fluid">
                     <div class="nav-head">
-                        <div class="member-info">
+                        <!--<div class="member-info">
                             <a href="#">
                                 <div class="figure" style="background-image: url(/assets/images/img_member.png)"></div>
                                 <p>홍길동</p>
                             </a>
+                        </div>-->
+                        <div class="member">
+                            <ul>
+                                <li><span>홍길동</span></li>
+                                <li><a href="#">로그인</a></li>
+                                <li><a href="#">회원가입</a></li>
+                            </ul>
                         </div>
-                        <ul class="member">
-                            <li><a href="#">로그인</a></li>
-                            <li><a href="#">회원가입</a></li>
-                        </ul>
                     </div>
                     <div class="nav-body">
                         <ul>
@@ -231,6 +234,7 @@
                 $(document).on('click', '.btn-site-map', function(){
                     $('body').toggleClass('nav-opened');
                     $('.btn-site-map').toggleClass('btn-close');
+                    $('#site-map .nav-body > ul > li').eq(0).addClass('active');
                 });
                 $(document).on('click', '.nav-body > ul > li > a', function(e) {
                     if ($(this).parent().hasClass('active')) {
